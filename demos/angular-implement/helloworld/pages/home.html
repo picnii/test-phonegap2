@@ -1,0 +1,13 @@
+<h2>Welcome to "{{message}}"</h2>
+Bind with scope you can even put some calculation like {{ 20 - 3}} or could use like.
+<p>
+	I have salary {{ salary }} and I need to pay tax {{tax}} % so I actually get {{ salary - (salary * tax / 100) }}
+</p>
+<p>It could be bind with input instantly with ng-model like</p>
+<input type="text" ng-model="message"> <br/>
+<input type="number" ng-model="salary"> <br/>
+<input type="number" ng-model="tax"> <br/>
+<h3>Object</h3>
+<p>can use in model as well like {{car.color}} car {{car.brand}}</p>
+<input type="text" ng-model="car.color"> <br/>
+<input type="text" ng-model="car.brand"> <br/>
