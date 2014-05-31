@@ -1,27 +1,15 @@
 function HomeCtrl ($scope) {
 	// body...
-	$scope.is_show_answer = false;
-	$scope.plus = function()
+	$scope.test = function(a)
 	{
-		$scope.is_show_answer = true;
-		$scope.answer = $scope.inputA + $scope.inputB;
+		/*if(typeof(a) != 'object')
+			alert(a);
+		else
+			alert(a.age);*/
+		if(angular.isObject(a))
+			alert(a.age);
+		else
+			alert(a)
 	}
-
-	$scope.minus = function()
-	{
-		$scope.is_show_answer = true;
-		$scope.answer = $scope.inputA - $scope.inputB;
-	}
-
-	$scope.time = function()
-	{
-		$scope.is_show_answer = true;
-		$scope.answer = $scope.inputA * $scope.inputB;
-	}
-
-	$scope.divided = function()
-	{
-		$scope.is_show_answer = true;
-		$scope.answer = $scope.inputA / $scope.inputB;
-	}
+	$scope.people = {name: 'PPP', age: 20}
 }

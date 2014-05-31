@@ -1,7 +1,18 @@
 
 
 
-<input type="text" ng-model="pic_url">;
-<a ng-href="{{pic_url}}" >
+<input type="text" ng-model="pic_url">
+<a ng-href="{{pic_url}}" target="_blank" >
 	<img ng-src="{{pic_url}}" />
 </a>
+
+<div>
+	Hi my name is {{people.name}} age 
+	{{people.age}}<br/>
+	{{people}}
+</div>
+<div>
+	<button ng-click="test(5)">TEST</button>
+	<button ng-click="test('popopopopop')">TEST String</button>
+	<button ng-click="test(people)">TEST Object</button>
+</div>
