@@ -1,26 +1,7 @@
 
-<input ng-change="is_show_answer=false" type="number" ng-model="inputA" class="form-control">
-<input ng-change="is_show_answer=false" type="number" ng-model="inputB"  class="form-control">
 
 
-<div class="row">
-	<div class="col-xs-6">
-		<button ng-click="plus()" class="btn btn-primary form-control btn-lg"  >+</button>
-	</div>
-	<div class="col-xs-6">
-		<button ng-click="minus()" class="btn btn-primary  form-control btn-lg"  >-</button>
-	</div>
-</div>
-<div class="row">
-	<div class="col-xs-6">
-		<button ng-click="time()" class="btn btn-primary  form-control btn-lg"  >x</button>
-	</div>
-	<div class="col-xs-6">
-		<button ng-click="divided()" class="btn btn-primary  form-control btn-lg"  >/</button>
-	</div>
-</div>
-
-<div ng-show="is_show_answer">
-	<h2>{{answer}}</h2>
-</div>
-
+<input type="text" ng-model="pic_url">;
+<a ng-href="{{pic_url}}" >
+	<img ng-src="{{pic_url}}" />
+</a>
