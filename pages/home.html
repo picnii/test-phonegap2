@@ -19,8 +19,20 @@
 
 <table class="table">
 	<tr ng-repeat="item in products">
-		<td>{{item.name}}</td>
-		<td>{{item.price}}</td>
+		<td>
+			<span ng-hide="item.is_edit">{{item.name}}</span>
+			<input ng-show="item.is_edit" type="text" 
+			ng-model="item.name">
+		</td>
+		<td>
+			<span ng-hide="item.is_edit">{{item.price}}</span>
+			<input ng-show="item.is_edit" type="number" 
+			ng-model="item.price">
+		</td>
+		<td>
+			<button 
+			ng-click="edit(item)">Edit</button>
+		</td>
 	</tr>
 </table>
 
