@@ -1,6 +1,10 @@
 <input type="number" ng-model="score">
 
-<button>Caculute</button><br/>
+<button ng-click="calculate()"  >Caculute</button><br/>
 
-
-Your score is {{score}} you got grade {{grade}}
+<div ng-hide="is_show_grade">
+	พิพม์สิครับ คะแนนน่ะ
+</div>
+<div ng-show="is_show_grade" >
+	Your score is {{score}} you got grade {{grade}}
+</div>
