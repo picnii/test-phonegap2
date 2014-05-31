@@ -30,8 +30,9 @@
 			ng-model="item.price">
 		</td>
 		<td>
-			<button 
+			<button ng-hide="item.is_edit"
 			ng-click="edit(item)">Edit</button>
+			<button ng-show="item.is_edit" ng-click="save(item)">Save</button>
 		</td>
 	</tr>
 </table>

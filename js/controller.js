@@ -13,11 +13,26 @@ function HomeCtrl ($scope) {
 	}
 	$scope.people = {name: 'PPP', age: 20}
 	$scope.products = [
-		{name:"Coke", price:20},
-		{name:"Pepsi", price:10},
-		{name:"Banana", price:25},
-		{name:"Fanta", price:30}
+		{name:"Coke", price:20, is_edit: false },
+		{name:"Pepsi", price:10, is_edit: false },
+		{name:"Banana", price:25, is_edit: false },
+		{name:"Fanta", price:30, is_edit: false }
 	]
+
+	$scope.edit = function(item)
+	{
+		item.is_edit = true;
+	}
+
+	$scope.save = function(item)
+	{
+		item.is_edit = false;
+
+
+	}
+
+
+
 
 
 }
