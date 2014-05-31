@@ -1,4 +1,6 @@
-<input type="number" ng-model="score">
+<form ng-submit="calculate()">
+	<input ng-change="is_show_grade=false" type="number" ng-model="score">
+</form>
 
 <button ng-click="calculate()"  >Caculute</button><br/>
 
