@@ -12,4 +12,12 @@ function HomeCtrl ($scope) {
 			alert(a)
 	}
 	$scope.people = {name: 'PPP', age: 20}
+	$scope.products = [
+		{name:"Coke", price:20},
+		{name:"Pepsi", price:10},
+		{name:"Banana", price:25},
+		{name:"Fanta", price:30}
+	]
+
+
 }
