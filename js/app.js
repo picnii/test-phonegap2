@@ -1,0 +1,16 @@
+//angular.module('myApp', ["mobile-angular-ui"]);
+var app = angular.module('grader', [
+  "ngRoute",
+  "mobile-angular-ui",
+  "mobile-angular-ui.touch",
+  "mobile-angular-ui.scrollable"
+])
+
+app.config(function($routeProvider) {
+      $routeProvider.when('/', { 
+         templateUrl: 'pages/home.html',
+         controller: 'HomeCtrl'
+      })
+      // ...
+  });
+
