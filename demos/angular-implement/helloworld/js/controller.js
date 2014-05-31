@@ -8,7 +8,11 @@ function HomeCtrl ($scope) {
 
 function ProfileCtrl ($scope) {
 	// body...
-
+	$scope.user = {
+		name: "Sompop",
+		age: 20,
+		food: "ข้าวผัดกระเพรา"
+	}
 	$scope.salary = 15000
 
 }
