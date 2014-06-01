@@ -1,53 +1,13 @@
-
-
-
-<input type="text" ng-model="pic_url">
-<a ng-href="{{pic_url}}" target="_blank" >
-	<img ng-src="{{pic_url}}" />
-</a>
-
-<div>
-	Hi my name is {{people.name}} age 
-	{{people.age}}<br/>
-	{{people}}
-</div>
-<div>
-	<button ng-click="test(5)">TEST</button>
-	<button ng-click="test('popopopopop')">TEST String</button>
-	<button ng-click="test(people)">TEST Object</button>
-</div>
-
-<table class="table">
-	<tr ng-repeat="item in products">
-		<td>
-			<img ng-src="{{item.img}}">
-			<input ng-show="item.is_edit" type="text" 
-			ng-model="item.img">
-		</td>
-		<td>
-			<span ng-hide="item.is_edit">{{item.name}}</span>
-			<input ng-show="item.is_edit" type="text" 
-			ng-model="item.name">
-		</td>
-		<td>
-			<span ng-hide="item.is_edit">{{item.price}}</span>
-			<input ng-show="item.is_edit" type="number" 
-			ng-model="item.price">
-		</td>
-		<td>
-			<button ng-hide="item.is_edit"
-			ng-click="edit(item)">Edit</button>
-			<button ng-show="item.is_edit" ng-click="save(item)">Save</button>
-		</td>
-	</tr>
-</table>
-
-
-
-
-
-
-
-
-
-
+<section class="scrollable">
+	<div class="scrollable-content">
+		<div style="text-align:center">
+			<img ng-src="{{img}}" />
+		</div>
+		<div>
+			<form role="form" ng-submit="answer()">
+				<input ng-model="input" type="text" class="form-control">
+				<input type="submit">
+			</form>
+		</div>
+	</div>
+</section>
