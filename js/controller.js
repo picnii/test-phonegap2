@@ -9,6 +9,14 @@ function initCtrl($rootScope, $location)
 		{img: "http://www.ezythaicooking.com/images/rf2-stir-fried-chinese-kale-with-oyster-sauce-2.jpg", answer:"ผัดคะน้า" }
 	]
 	$rootScope.is_win = false;
+
+	$rootScope.top_scores = [
+		{name:"JOHN", score: 490},
+		{name:"NY", score: 300},
+		{name:"DAVE", score: 200},
+		{name:"BROOK", score: 100}
+	]
+
 	$rootScope.high_score = 0;
 	$rootScope.high_score_name = "";
 	$rootScope.checkWin = function()

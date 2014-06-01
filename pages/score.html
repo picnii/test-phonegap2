@@ -1,7 +1,7 @@
 <h2>High Score</h2>
 <table class="table">
-	<tr>
-		<td>{{name}}</td>
-		<td>{{score}}</td>
+	<tr ng-repeat="item in top_scores" >
+		<td>{{item.name}}</td>
+		<td>{{item.score}}</td>
 	</tr>
 </table>
