@@ -51,11 +51,25 @@ function HomeCtrl ($scope, $rootScope, $location) {
 		if($scope.question_index == $scope.questions.length)
 		{
 			$rootScope.is_win = true;
-			if($rootScope.high_score < $scope.score)
+
+			/*if($rootScope.high_score < $scope.score)
 			{
 				$rootScope.is_new_record = true;
 				$rootScope.high_score = $scope.score;
+			}*/
+
+			for(var i =0; i < $rootScope.top_scores.length ;i++)
+			{
+				var top_score = $rootScope.top_scores[i];
+				if(top_score.score < $scope.score)
+				{
+					$rootScope.top_score_index = i;
+					$rootScope.is_new_record = true;
+					break;
+				}
 			}
+
+
 			$rootScope.current_score = $scope.score;
 			$location.path('/win');	
 		}
@@ -69,7 +83,11 @@ function WinCtrl($scope, $location, $rootScope)
 	$scope.checkWin();
 	$scope.sendScore = function()
 	{
-		$rootScope.high_score_name = $scope.name;
+		$rootScope.top_scores[$rootScope.top_score_index] = {
+			name:$scope.name,
+			score:$scope.current_score
+		}
+		//$rootScope.high_score_name = $scope.name;
 		$location.path('highscore');
 	}
 }
