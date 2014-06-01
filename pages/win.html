@@ -1,1 +1,7 @@
-<h2>You win</h2>
+<h2>You win you got {{current_score}}</h2>
+<div ng-show="is_new_record">
+	And you are ?? <br/>
+	<form ng-submit="sendScore()">
+		<input type="text" ng-model="name" class="form-control">
+	</form>
+</div>

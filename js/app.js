@@ -13,6 +13,9 @@ app.config(function($routeProvider) {
       }).when('/win', { 
          templateUrl: 'pages/win.html',
          controller: 'WinCtrl'
+      }).when('/highscore', { 
+         templateUrl: 'pages/score.html',
+         controller: 'HighCtrl'
       })
       // ...
   });
