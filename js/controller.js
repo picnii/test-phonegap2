@@ -10,12 +10,26 @@ function initCtrl($rootScope, $location)
 	]
 	$rootScope.is_win = false;
 
-	$rootScope.top_scores = [
+	var def_top_scores = [
 		{name:"JOHN", score: 490},
 		{name:"NY", score: 300},
 		{name:"DAVE", score: 200},
 		{name:"BROOK", score: 100}
 	]
+
+
+	$rootScope.load = function()
+	{
+		if(typeof localStorage['test_phonegap2'] == 'undefined')
+			localStorage['test_phonegap2'] = JSON.stringify(def_top_scores);
+		$rootScope.top_scores = JSON.parse(localStorage['test_phonegap2']);
+	}
+
+	$rootScope.save = function()
+	{
+		localStorage['test_phonegap2'] = JSON.stringify($rootScope.top_scores);
+	}
+
 
 	$rootScope.high_score = 0;
 	$rootScope.high_score_name = "";
@@ -24,6 +38,7 @@ function initCtrl($rootScope, $location)
 		if(!$rootScope.is_win)
 			$location.path('/');
 	}
+	$rootScope.load();
 }
 app.run(initCtrl);
 
@@ -87,6 +102,7 @@ function WinCtrl($scope, $location, $rootScope)
 			name:$scope.name,
 			score:$scope.current_score
 		}
+		$scope.save();
 		//$rootScope.high_score_name = $scope.name;
 		$location.path('highscore');
 	}
