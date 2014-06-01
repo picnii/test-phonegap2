@@ -1,4 +1,4 @@
-function HomeCtrl ($scope) {
+function HomeCtrl ($scope, $rootScope, $location) {
 	// body...
 	$scope.question_index = 0;
 	$scope.questions = [
@@ -24,10 +24,23 @@ function HomeCtrl ($scope) {
 		}
 		$scope.input = "";
 		if($scope.question_index == $scope.questions.length)
-			alert("you win");
+		{
+			$rootScope.is_win = true;
+			$location.path('/win')
+		}
 	}
 
+}
 
-
+function WinCtrl($scope, $location)
+{
+	if(!$scope.is_win)
+		$location.path('/');
 
 }
+
+
+
+
+
+

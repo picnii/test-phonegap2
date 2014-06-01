@@ -10,6 +10,9 @@ app.config(function($routeProvider) {
       $routeProvider.when('/', { 
          templateUrl: 'pages/home.html',
          controller: 'HomeCtrl'
+      }).when('/win', { 
+         templateUrl: 'pages/win.html',
+         controller: 'WinCtrl'
       })
       // ...
   });
